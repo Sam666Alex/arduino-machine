@@ -18,3 +18,12 @@
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
           ),))))
+//checking code for memory leaks
+
+          if (anyFilters) {
+      _MyHomePageState._config?.doubleFilters.forEach((key, value) {
+        tabs.add(Tab(text: "$key:$value"));
+      });
+      _MyHomePageState._config?.longFilters.forEach((key, value) {
+        tabs.add(Tab(text: "$key:$value"));
+      });
